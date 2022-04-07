@@ -7,6 +7,7 @@ import spinner from '../assets/spinner.gif';
 
 import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_PRODUCTS } from "../utils/actions";
+import Cart from '../components/Cart';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -48,10 +49,11 @@ function Detail() {
           <img
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
-          />
+         />
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
+      <Cart />
     </>
   );
 }
